@@ -1,8 +1,8 @@
 const express = require('express');
 const router  = express.Router();
-const registrations  = require('../controllers/registrations');
-const session       = require('../controllers/session');
-const games = require('../controllers/games')
+const registrations = require('../controllers/registrations');
+const session = require('../controllers/session');
+const gamesController = require('../controllers/games');
 
 function sessionDelete(req, res) {
   return req.session.regenerate(() => res.redirect('/'));
@@ -18,45 +18,32 @@ function secureRoute(req, res, next) {
   return next();
 }
 
-
-// A home route
 router.get('/', (req, res) => res.render('homepage'));
 
 router.route('/register')
-  .get(registrations.new)
-  .post(registrations.create);
+.get(registrations.new)
+.post(registrations.create);
 
-  router.route('/login')
-  .get(session.new)
-  .post(session.create);
+router.route('/login')
+.get(session.new)
+.post(session.create);
 
-  router.route('/logout')
-  .get(session.delete);
+router.route('/logout')
+.get(session.delete);
 
-  router.route('/games')
-      .get(games.index);
+router.route('/games')
+.get(gamesController.index)
+.post(gamesController.create);
 
-  // router.route('/games/:id')
-  // .get(games.show)
-  // .put(secureRoute, games.update)
-  // .delete(secureRoute, games.delete);
+router.route('/games/new')
+.get(gamesController.new)
 
-// RESTful routes
-// All URLS should contain the PLURAL... don't chose octopus or people or something silly.
+router.route('/games/:id/edit')
+.get(gamesController.edit);
 
-// INDEX
-
-// NEW
-
-// SHOW
-
-// CREATE
-
-// EDIT
-
-// UPDATE
-
-// DELETE
-
+router.route('/games/:id')
+.delete(gamesController.delete)
+.post(gamesController.update)
+.get(gamesController.show);
 
 module.exports = router;
