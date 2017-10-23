@@ -11,6 +11,7 @@ const customResponses = require('./lib/customResponses');
 const authentication = require('./lib/authentication');
 const errorHandler = require('./lib/errorHandler');
 const User = require('./models/user');
+const Game = require('./models/game');
 
 const app = express();
 const { port, dbUri, sessionSecret } = require('./config/environment');
@@ -60,6 +61,15 @@ app.use((req, res, next) => {
       res.locals.isLoggedIn = true;
 
       next();
+    });
+});
+
+app.get('/games', (req, res) => {
+  Game
+    .find()
+    .exec()
+    .then((records) => {
+      res.render('games', { records });
     });
 });
 

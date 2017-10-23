@@ -2,6 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const registrations  = require('../controllers/registrations');
 const session       = require('../controllers/session');
+const games = require('../controllers/games')
 
 function sessionDelete(req, res) {
   return req.session.regenerate(() => res.redirect('/'));
@@ -17,6 +18,7 @@ function secureRoute(req, res, next) {
   return next();
 }
 
+
 // A home route
 router.get('/', (req, res) => res.render('homepage'));
 
@@ -31,10 +33,13 @@ router.route('/register')
   router.route('/logout')
   .get(session.delete);
 
-  router.route('/films/:id')
-  .get(films.show)
-  .put(secureRoute, films.update)
-  .delete(secureRoute, films.delete);
+  router.route('/games')
+      .get(games.index);
+
+  // router.route('/games/:id')
+  // .get(games.show)
+  // .put(secureRoute, games.update)
+  // .delete(secureRoute, games.delete);
 
 // RESTful routes
 // All URLS should contain the PLURAL... don't chose octopus or people or something silly.
