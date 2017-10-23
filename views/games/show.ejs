@@ -1,0 +1,22 @@
+
+<div class="large-12 columns">
+  <img src="<%= game.image %>" alt="<%= game.name %>">
+  <h2><%= game.name %></h2>
+  <% { %>
+    <a href="/games/<%= game.id %>/edit">Edit</a>
+    <form method="POST" action="/games/<%= game.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <button>Delete</button>
+    <a href="/games">Back</a>
+    </form>
+  <% } %>
+  <p>
+    <p>Game: <%= game.game %></p>
+    <p>Console: <%= game.console %></p>
+    <p>Prize money: £<%= game.prizeMoney %></p>
+    <p>Gaming website: <%= game.gamingWebsite %></p>
+    <p>Players needed: <%= game.playersNeeded %></p>
+    <p>Tournament: <%= game.tournament %></p>
+    <p>Gamer Tag: <%= game.gamerTag %></p>
+  </p>
+</div>

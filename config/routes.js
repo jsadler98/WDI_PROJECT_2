@@ -35,15 +35,18 @@ router.route('/games')
 .get(gamesController.index)
 .post(gamesController.create);
 
+
 router.route('/games/new')
-.get(gamesController.new)
+.get(gamesController.new);
+
+router.route('/games/:id')
+.get(gamesController.show)
+.put(gamesController.update)
+.delete(gamesController.delete);
 
 router.route('/games/:id/edit')
 .get(gamesController.edit);
 
-router.route('/games/:id')
-.delete(gamesController.delete)
-.post(gamesController.update)
-.get(gamesController.show);
+
 
 module.exports = router;

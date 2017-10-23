@@ -45,7 +45,7 @@ function editRoute(req, res, next) {
     .exec()
     .then(game => {
       if(!game) return res.redirect();
-      if(!game.belongsTo(req.user)) return res.unauthorized('You do not have permission to edit that resource');
+
       return res.render('games/edit', { game });
     })
     .catch(next);
@@ -57,8 +57,6 @@ function updateRoute(req, res, next) {
     .exec()
     .then(game => {
       if(!game) return res.notFound();
-      if(!game.belongsTo(req.user)) return res.unauthorized('You do not have permission to edit that resource');
-
       for(const field in req.body) {
         game[field] = req.body[field];
       }
@@ -77,8 +75,8 @@ function deleteRoute(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then(game => {
-      if(!game) return res.notFound();
-      if(!game.belongsTo(req.user)) return res.unauthorized('You do not have permission to delete that resource');
+      // if(!game) return res.notFound();
+      // if(!game.belongsTo(req.user)) return res.unauthorized('You do not have permission to delete that resource');
       return game.remove();
     })
     .then(() => res.redirect('/games'))

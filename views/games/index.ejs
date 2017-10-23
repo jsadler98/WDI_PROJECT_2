@@ -1,14 +1,10 @@
 <% games.forEach((game) => { %>
   <div class="large-4 columns">
       <img class="thumbnail" src="<%= game.image %>" alt="<%= game.game %>">
-      <h2><%= game.game %></h2>
+      
 
-      <p>Console: <%= game.console %></p>
-      <p>Prize money: £<%= game.prizeMoney %></p>
-      <p>Gaming website: <%= game.gamingWebsite %></p>
-      <p>Players needed: <%= game.playersNeeded %></p>
-      <p>Tournament: <%= game.tournament %></p>
-      <p>Gamer Tag: <%= game.gamerTag %></p>
-    </a>
+
   </div>
-<% }) %>
+
+<a href="/games/<%= game.id %>">See Game</a>
+  <% }) %>

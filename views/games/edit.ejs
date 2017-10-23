@@ -1,0 +1,37 @@
+<form method="POST" action="/games/<%= game.id %>">
+  <input type="hidden" name="_method" value="PUT">
+  <div>
+    <label for="game">Game</label>
+    <input type="text" name="game" id="game"  value="<%= game.game %>" required>
+  </div>
+    <div>
+      <label for="console">Console</label>
+      <input type="text" name="console" id="console"  value="<%= game.console %>" required>
+    </div>
+    <div>
+      <label for="prizeMoney">Prize Money</label>
+      <input type="number" name="prizeMoney" id="prizeMoney" value="<%= game.prizeMoney %>">
+    </div>
+    <div>
+      <label for="gamingWebsite">Gaming Website</label>
+      <input type="text" name="gamingWebsite" id="gamingWebsite" value="<%= game.gamingWebsite %>" required>
+    </div>
+    <div>
+      <label for="playersNeeded">Players Needed</label>
+      <input type="text" name="playersNeeded" id="playersNeeded" value=" <%= game.playersNeeded %>" required>
+    </div>
+    <div>
+      <label for="tournament">Tournament</label>
+      <input type="text" name="tournament" id="tournament" value="<%= game.tournament %>" required>
+    </div>
+  <div>
+    <label for="image">Image</label>
+    <input type="text" name="image" id="image" value="<%= game.image %>">
+  </div>
+  <div>
+    <label for="gamerTag">Gamer Tag</label>
+    <input type="text" name="gamerTag" id="gamerTag"  value="<%= game.gamerTag %>" required>
+  </div>
+
+  <button class="button">Apply</button>
+</form>
