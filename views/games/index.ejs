@@ -1,7 +1,13 @@
+<div class="row ml-2">
 <% games.forEach((game) => { %>
-  <div class="large-4 columns">
-      <img class="thumbnail" src="<%= game.image %>" alt="<%= game.game %>">
+  <div class="col-4">
+  <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="<%= game.image %>" alt="Card image cap">
+  <div class="card-body">
+  <h4 class="card-title"></h4>
+  <a href="/games/<%= game.id %>" class="btn btn-primary">See Game</a>
   </div>
-
-<a href="/games/<%= game.id %>">See Game</a>
+  </div>
+  </div>
   <% }) %>
+</div>

@@ -22,6 +22,7 @@ const gameSchema = new mongoose.Schema({
   tournament: { type: String },
   image: { type: String },
   gamerTag:{ type: String, required: true },
+  startTime:{type: String, required:true},
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   comments: [ commentSchema ]
 });

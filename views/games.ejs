@@ -1,11 +1,1 @@
-<h1>Games</h1>
 
-<% games.forEach((game) => { %>
-  <div class="large-4 columns">
-    <a href="/games/<%= game.id %>">
-      <img class="thumbnail" src="<%= game.image %>" alt="<%= game.name %>">
-
-      <h2><%= game.name %></h2>
-    </a>
-  </div>
-<% }) %>
