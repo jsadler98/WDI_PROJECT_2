@@ -32,12 +32,12 @@ router.route('/logout')
 .get(session.delete);
 
 router.route('/games')
-.get(gamesController.index)
-.post(gamesController.create);
+.get(secureRoute, gamesController.index)
+.post(secureRoute, gamesController.create);
 
 
 router.route('/games/new')
-.get(gamesController.new);
+.get(secureRoute, gamesController.new);
 
 router.route('/games/:id')
 .get(gamesController.show)
@@ -46,6 +46,12 @@ router.route('/games/:id')
 
 router.route('/games/:id/edit')
 .get(gamesController.edit);
+
+router.route('/games/:id/comments')
+  .post(secureRoute, gamesController.createComment);
+
+router.route('/games/:id/comments/:commentId')
+  .delete(secureRoute, gamesController.deleteComment);
 
 
 

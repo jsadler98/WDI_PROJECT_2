@@ -6,6 +6,7 @@ mongoose.connect(dbUri, { useMongoClient: true });
 
 // Require the model
 const Game = require('../models/game');
+const User = require('../models/user');
 // Drop the model
 Game.collection.drop();
 // Create the models
