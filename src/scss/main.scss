@@ -1,17 +1,87 @@
+
+$font-stack: Concert One, cursive;
+$primary-color: #85CB33;
+
+
 body {
   font-family: 'Roboto', sans-serif;
-
+  background-color: #02020A;
 }
 
+//NavBar
 .navbar {
-  background-color: #32379E !important;
+  background-color: $primary-color !important;
 }
 
 .navbar-brand{
-font-family: 'Concert One', cursive;
-font-size: 50px;
+  font-family: $font-stack;
+  font-size: 60px;
+}
+
+.games-post {
+  margin-left: -37%;
 }
 
 .collapse {
-font-family: 'Concert One', cursive;
+  font-family: $font-stack;
+  font-size: 20px;
+}
+
+//Forms
+.btn {
+  background-color: $primary-color !important;
+  color: black !important;
+  border-color: $primary-color !important;
+  font-family: $font-stack;
+}
+
+.form-group {
+  color: $primary-color !important;
+  font-family: $font-stack;
+
+}
+
+.add-new-tourney{
+  color: $primary-color !important;
+  font-family: $font-stack;
+}
+
+.form-control {
+width:400px;
+
+}
+
+//Index
+.card {
+  border-color: $primary-color;
+  border-width: 2px;
+  background-color: black;
+  margin-top: 20px;
+  border-radius: 4.9%;
+  width: 29%;
+}
+
+.card-img-top {
+  border-radius: 5%;
+  height:400px;
+  width:100%;
+}
+
+//Games
+.game-info{
+  color: $primary-color;
+  font-family: $font-stack;
+}
+
+.comments {
+  font-size: 30px;
+  color: $primary-color;
+  font-family: $font-stack;
+}
+
+.text-center {
+  margin-top: 20px;
+}
+
+.homepage {
 }
