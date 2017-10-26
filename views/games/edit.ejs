@@ -1,4 +1,4 @@
-<form method="POST" action="/games/<%= game.id %>">
+<form class="form-group" method="POST" action="/games/<%= game.id %>">
   <input type="hidden" name="_method" value="PUT">
   <div>
     <label for="game">Game</label>
@@ -36,5 +36,5 @@
     <label for="startTime">Start Time</label>
     <input placeholder="Time" type="text" name="startTime" id="startTime" value="<%= game.startTime %>" required>
   </div>
-  <button class="button">Apply</button>
+  <button class="btn">Apply</button>
 </form>

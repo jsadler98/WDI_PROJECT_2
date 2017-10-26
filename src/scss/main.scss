@@ -20,6 +20,7 @@ body {
 
 .games-post {
   margin-left: -37%;
+  text-decoration: underline;
 }
 
 .collapse {
@@ -38,7 +39,6 @@ body {
 .form-group {
   color: $primary-color !important;
   font-family: $font-stack;
-
 }
 
 .add-new-tourney{
@@ -47,13 +47,10 @@ body {
 }
 
 .form-control {
-width:400px;
-
+  width:400px;
 }
-
 //Index
 .card {
-  border-color: $primary-color;
   border-width: 2px;
   background-color: black;
   margin-top: 20px;
@@ -71,17 +68,16 @@ width:400px;
 .game-info{
   color: $primary-color;
   font-family: $font-stack;
+  font-size: 15px;
+  position: center;
 }
 
 .comments {
-  font-size: 30px;
+  font-size: 15px;
   color: $primary-color;
   font-family: $font-stack;
 }
 
 .text-center {
   margin-top: 20px;
-}
-
-.homepage {
 }

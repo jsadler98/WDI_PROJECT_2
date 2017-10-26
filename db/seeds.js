@@ -42,7 +42,7 @@ User
     password: 'password',
     profilePicture: 'http://www.fillmurray.com/300/300',
     passwordConfirmation: 'password'
-  }
+  },
 ])
 .then(users => {
   console.log(`${users.length} users were created!`);

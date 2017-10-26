@@ -1,44 +1,50 @@
 
 <div class="large-12 columns">
   <div class="text-center">
+    <a href="/games" class="btn btn-lg active" role="button" aria-pressed="true">Back</a>
     <img src="<%= game.image %>" alt="<%= game.name %>">
     <a href="/games/<%= game.id %>/edit" class="btn btn-lg active" role="button" aria-pressed="true">Edit</a>
-    <a href="/games" class="btn btn-lg active" role="button" aria-pressed="true">Back</a>
   </div>
   <h2><%= game.name %></h2>
   <% { %>
 
-
+    <div class="mx-auto" style="width: 400px;">
     <p>
-      <p class="game-info">Game: <%= game.game %> </p>
-      <p class="game-info">Console: <%= game.console %></p>
-      <p class="game-info">Prize money: £<%= game.prizeMoney %></p>
-      <p class="game-info">Gaming website: <%= game.gamingWebsite %></p>
-      <p class="game-info">Players needed: <%= game.playersNeeded %></p>
-      <p class="game-info">Tournament: <%= game.tournament %></p>
-      <p class="game-info">Gamer Tag: <%= game.gamerTag %></p>
-      <p class="game-info">Start Time: <%= game.startTime %></p>
-      <p class="game-info">Created By: <%= game.user.username %></p>
+    <p class="game-info">Game: <%= game.game %> </p>
+    <p class="game-info">Console: <%= game.console %></p>
+    <p class="game-info">Prize money: £<%= game.prizeMoney %></p>
+    <p class="game-info">Gaming website: <%= game.gamingWebsite %></p>
+    <p class="game-info">Players needed: <%= game.playersNeeded %></p>
+    <p class="game-info">Tournament: <%= game.tournament %></p>
+    <p class="game-info">Gamer Tag: <%= game.gamerTag %></p>
+    <p class="game-info">Start Time: <%= game.startTime %></p>
+    <p class="game-info">Created By: <%= game.user.username %></p>
     </p>
 
-  </div>
-
-  <section>
+    <section>
     <h4  class="comments" >Comments</h4>
+    <form method="POST" action="/games/<%= game.id %>/comments">
+      <textarea type="text" name="content"></textarea>
+      <button class="btn btn-lg btn-block">Submit</button>
+    </form>
+
+
     <% game.comments.forEach((comment) => { %>
       <p  class="game-info" ><%= comment.content %></p>
       <p  class="game-info" ><%= comment.user.username %></p>
       <% if(locals.isAuthenticated) { %>
         <form method="POST" action="/games/<%= game.id %>/comments/<%= comment.id %>">
-        <input type="hidden" name="_method" value="DELETE">
-        <button>Delete</button>
+          <input type="hidden" name="_method" value="DELETE">
+          <button>Delete</button>
         </form>
-        <% } %>
-        <% }) %>
-      </section>
-        <% } %>
+      <% } %>
 
-      <form method="POST" action="/games/<%= game.id %>">
-        <input type="hidden" name="_method" value="DELETE">
-        <button class="btn btn-danger btn-lg btn-block">Delete</button>
-      </form>
+    <% }) %>
+    </section>
+        </div>
+    <% } %>
+
+        <form method="POST" action="/games/<%= game.id %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <button class="btn btn-danger btn-lg btn-block">Delete</button>
+        </form>
