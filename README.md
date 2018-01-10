@@ -18,26 +18,44 @@ Title:
 
 ![Imgur](https://i.imgur.com/oDeAHmq.png)
 
-Playing area: 
+Games/Tournament index: 
 
-![Imgur](https://i.imgur.com/rQZj3wS.png)
+![Imgur](https://i.imgur.com/rBoq165.png)
 
-In game action:
+Games/Tournament show:
 
-![Imgur](https://i.imgur.com/DcwiorF.png)
+![Imgur](https://i.imgur.com/86sfZPM.png)
+
+Description/Comment field:
+
+![Imgur](https://i.imgur.com/0XVPSAQ.png)
 
 ## What was a success?
 
-My greatest achievement during this project was getting the basic functionality working aka getting the character to move side to side and getting the items to fall, This went very well for me and I enjoyed it alot as I could explore the interenet and the world of JavaScript for solutions and tips to get this functionality working.
+A success for me in this project was getting my idea across and creating something that I thought could really have an impact on the competitive gaming community. Although I found it challenging I enjoyed exploring the EJS syntax as I enjoy to learn new things, I used the EJS syntax well on my Games/Tournament index page (see above) as I liked how I could easily format the page and show my data from my database.
 
 Example code:
 
-
+```
+<div class="row ml-2">
+<% games.forEach((game) => { %>
+  <div class="col-4">
+  <div class="card" style="width: 20rem;"e>
+  <img class="card-img-top" src="<%= game.image %>" alt="Card image cap">
+  <div class="card-body">
+  <h4 class="card-title"></h4>
+  <a href="/games/<%= game.id %>" class="btn btn-primary">See Game</a>
+  </div>
+  </div>
+  </div>
+  <% }) %>
+</div>
+```
 
 ## Challenges
 
-During this project a big challenge for me was getting collision to work on my game as I needed it so that the unicorn could collect the falling coins, this was a long and complicated task and it consumed most of my time during this project but after reading endless StackOverflow posts and getting help off my colleagues I finally got it working. This was a huge lesson for me as I realised that some parts of code are like mini projects and take alot of time and studying to get working.
+Although I said I enjoyed learning the EJS syntax (WHICH I DID!!!) it was still very confusing at some points and as a junior developer I felt that the syntax was very confusing to read in atom as it was very hard to format the code therefor I would get lost as it just seemed to be cluttered by ice-cream tags ```  <%= ```. Also time management is something that challenges me and if I was to do the project again I would of saved more time to style my app.
 
 ## Conclusion 
 
-Overall this project was great as it was good to get to study and learn Javascript, HTML5 and CSS3 as individuals making a cool game.
+This was a great project as it helped me learn a lot about myself and highlighted the personal skils I need to work on such as time managment and planning but I also need to work on my coding especially styling.
