@@ -12,6 +12,10 @@ The idea with this app was to create something that would connect competitive ga
 
 https://gamespost.herokuapp.com/
 
+Register and Login to view the "Find Tournaments" page.
+
+Some of the colors have been changed due to heroku.
+
 ## Screenshots
 
 Title: 
