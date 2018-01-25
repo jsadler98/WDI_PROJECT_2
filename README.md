@@ -63,3 +63,7 @@ Although I said I enjoyed learning the EJS syntax (WHICH I DID!!!) it was still 
 ## Conclusion 
 
 This was a great project as it helped me learn a lot about myself and highlighted the personal skils I need to work on such as time managment and planning but I also need to work on my coding especially styling.
+
+## Currently
+
+This will forever be developed as I want to turn it into a full scale project for me and a few friends to work on.
